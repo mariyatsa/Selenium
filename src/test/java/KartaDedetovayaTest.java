@@ -8,15 +8,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.By;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class KartaDedetovayaTest {
     private static WebDriver driver;
-
     @BeforeEach
+
     void setUp() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
         driver = new ChromeDriver();
     }
 
@@ -31,8 +35,9 @@ public class KartaDedetovayaTest {
         WebDriverManager.chromedriver().setup();
     }
 
+
     @Test
-    void test1() throws InterruptedException {
+    void test1()  {
         // загружаем страницу
         driver.get("http://localhost:9999/");
        WebElement form = driver.findElement(By.cssSelector("[data-test-id=callback-form]"));
@@ -44,6 +49,6 @@ public class KartaDedetovayaTest {
        assertEquals(" Ваша заявка успешно отправлена!", text);
 
         // задержка открываемой страницы
-        Thread.sleep(5000);
+       // Thread.sleep(5000);
     }
 }
