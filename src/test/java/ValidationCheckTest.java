@@ -74,6 +74,7 @@ public class ValidationCheckTest {
                 driver.findElement(By.cssSelector("[data-test-id='phone'].input_invalid .input__sub")).getText().trim());
 
     }
+
     @Test
     public void test6() {// отсутствует галочка о соглашении
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Мария хоружевская");
