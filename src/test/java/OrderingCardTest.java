@@ -36,7 +36,7 @@ public class OrderingCardTest {
     }
 
     @Test
-    void test1()  {
+    void test1()  {// проверка валидации полей
         // загружаем страницу
         // driver.get("http://localhost:9999/");
         // WebElement form = driver.findElement(By.cssSelector("[data-test-id=callback-form]"));
